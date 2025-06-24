@@ -36,14 +36,11 @@ class FreeLancerServiceTest {
 
     @ParameterizedTest
     @CsvFileSource (resources = "test_data.csv")
-    public void testWithParams(int income, int expences, int threshold, int expected) {
-
+    public void testWithParams (int income, int expences, int threshold, int expected) {
         FreeLancerService service = new FreeLancerService();
-
         int actual = service.calculate(income, expences, threshold);
-
-
         Assertions.assertEquals(expected, actual);
+
     }
 }
 
